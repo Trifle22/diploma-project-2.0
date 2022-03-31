@@ -1,26 +1,34 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "outDir": "./node_modules/outDir",
+    "sourceMap": true,
+    "target": "es2017",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "checkJs": false,
+    "skipLibCheck": false,
+    "noImplicitAny": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "noEmit": false,
+    "esModuleInterop": true,
     "module": "esnext",
+    "rootDirs": ["src", ".storybook", "scripts"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "isolatedModules": false,
+    "jsx": "react",
+    "types": [
+      "node",
+      "webpack-env",
+      "redux-persist",
+      "jest"
+    ]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "src/**/*.test.ts", "src/**/*.test.tsx", "src/**/*.spec.ts", "src/**/*.spec.tsx"]
 }

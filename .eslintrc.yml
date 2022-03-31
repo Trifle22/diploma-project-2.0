@@ -1,0 +1,105 @@
+env:
+  browser: true
+  es6: true
+  jest/globals: true
+  mocha: true
+extends:
+- plugin:@typescript-eslint/recommended
+- plugin:react/recommended
+- airbnb
+- plugin:redux-saga/recommended
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: "./tsconfig.eslint.json"
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2019
+  sourceType: module
+plugins:
+- react
+- react-hooks
+- "@typescript-eslint"
+- redux-saga
+- eslint-comments
+rules:
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: error
+  react/jsx-filename-extension:
+  - 1
+  - extensions:
+    - ".js"
+    - ".jsx"
+    - ".ts"
+    - ".tsx"
+  linebreak-style: 0
+  max-len:
+  - error
+  - code: 130
+  import/extensions:
+  - error
+  - ignorePackages
+  - ts: "off"
+    tsx: "off"
+  import/prefer-default-export: "off"
+  import/no-unresolved: "off"
+  import/no-extraneous-dependencies:
+  - error
+  - devDependencies:
+    - "src/store/store.ts"
+    - ".storybook/**"
+    - "storybook/**"
+    - "**/*.stories.tsx"
+  no-plusplus: "off"
+  implicit-arrow-linebreak: "off"
+  "@typescript-eslint/explicit-function-return-type": "off"
+  "@typescript-eslint/no-explicit-any": "off"
+  indent: "off"
+  "@typescript-eslint/indent": ["error", 4, { "SwitchCase": 1 }]
+  react/jsx-indent: ["error", 4]
+  "react/function-component-definition": [
+      2,
+    {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function"
+    }
+  ]
+  react/jsx-indent-props: "off"
+  react/jsx-props-no-spreading: "off"
+  comma-dangle: "off"
+  arrow-parens: "off"
+  jsx-a11y/accessible-emoji: "off"
+  redux-saga/no-unhandled-errors: "off"
+  no-unused-vars: "off"
+  react/prop-types: "off"
+  react/require-default-props: "off"
+  consistent-return: "off"
+  no-use-before-define: "off"
+  "@typescript-eslint/no-use-before-define": [ "error" ]
+  no-shadow: "off"
+  "@typescript-eslint/no-shadow": [ "error" ]
+  no-undef: "off"
+  eslint-comments/no-unused-disable: 2
+  "@typescript-eslint/no-non-null-assertion": 2
+  "@typescript-eslint/explicit-module-boundary-types": 0
+  "@typescript-eslint/no-unused-vars": 2
+  "@typescript-eslint/ban-types": 1
+  "react/jsx-no-duplicate-props": ["error", { "ignoreCase": false }]
+  "@typescript-eslint/naming-convention": ["error", { selector: 'interface', format: ["PascalCase"] }]
+  "@typescript-eslint/member-delimiter-style": ["error", { singleline: { delimiter: 'semi', requireLast: true } }]
+  "no-constant-condition": ["error", { "checkLoops": false }]
+settings:
+  import/resolver:
+    node:
+      extensions:
+      - ".ts"
+      - ".tsx"
+overrides:
+- files:
+  - "**/*.test.ts"
+  plugins:
+  - jest
+  extends:
+  - plugin:jest/all
