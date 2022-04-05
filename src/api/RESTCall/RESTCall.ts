@@ -25,9 +25,8 @@ export const RESTCall = (apiPath = '') =>
                 requestInit.headers = postHeaders;
             }
 
-            const response = await fetch(`/${apiPath ? `${apiPath}/` : ''}${route}`, {
+            const response = await fetch(`${apiPath ? `${apiPath}/` : ''}`, {
                 ...requestInit,
-                ...options
             });
 
             const filename = getFilenameFromContentDisposition(response.headers.get('Content-Disposition'));

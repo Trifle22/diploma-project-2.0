@@ -1,7 +1,7 @@
 export interface PastConference {
     id: number;
     date: number;
-    duration: string;
+    duration: number;
     participants: number;
     participantsList: Participant[];
 }

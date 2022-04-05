@@ -1,4 +1,4 @@
-/* eslint-disable react/function-component-definition */
+/* eslint-disable react/function-component-definition,react/no-unused-prop-types */
 import { makeStyles, Theme, Typography } from '@material-ui/core';
 import React, { ComponentType, ReactNode } from 'react';
 import { ListChildComponentProps } from 'react-window';

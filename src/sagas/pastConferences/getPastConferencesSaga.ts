@@ -4,13 +4,15 @@ import { PastConference } from '../../components/pages/PastConferencesPage/PastC
 import { pastConferencesActions } from '../../slices/pastConferences';
 import { createFetcherSaga } from '../common/createFetcherSaga';
 import { pastConferencesApi } from '../../api/apiRest/pastConferencesApi';
+import { pastConferencesMock } from '../../api/jsonMocks/mocks';
 
 export const getPastConferencesActionCreator = createAction('pastConferences/getAll');
 
 function* getPastConferencesSaga() {
     const pastConferences: PastConference[] = yield call(pastConferencesApi.getAllConferences);
+    console.log(pastConferences);
 
-    yield put(pastConferencesActions.hierarchicalSourcesReceived(pastConferences));
+    yield put(pastConferencesActions.hierarchicalSourcesReceived(pastConferencesMock));
 }
 
 const fetchGetPastConferencesSaga = createFetcherSaga(getPastConferencesActionCreator, getPastConferencesSaga);

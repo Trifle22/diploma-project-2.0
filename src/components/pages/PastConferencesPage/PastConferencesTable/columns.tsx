@@ -3,6 +3,7 @@ import { VirtualTableColumn } from '../../../common/VirtualTable/types';
 import { PastConference } from './types';
 import { columnWidths } from './columnWidths';
 import { ShowParticipantsListButton } from './ShowParticipantsListButton';
+import { getDateFromDuration } from '../../../helpers/getDateFromDuration';
 
 export const columns: VirtualTableColumn<PastConference>[] = [
     {
@@ -16,9 +17,10 @@ export const columns: VirtualTableColumn<PastConference>[] = [
         width: columnWidths.date
     },
     {
-        getCellText: ({ duration }) => duration,
+        getCellText: ({ duration }) => getDateFromDuration(duration),
         title: 'Длительность',
-        width: columnWidths.duration
+        width: columnWidths.duration,
+        getSortValue: ({ duration }) => duration
     },
     {
         getCellText: ({ participants }) => participants,
@@ -28,5 +30,6 @@ export const columns: VirtualTableColumn<PastConference>[] = [
     {
         title: 'Показать участников',
         Cell: ({ participantsList }) => <ShowParticipantsListButton participantsList={participantsList} />,
+        getSortValue: ({ participantsList }) => participantsList.length
     }
 ];
