@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Conference } from './types';
 import { ConfDescription } from './ConfDescription';
+import { WebcamView } from './Webcam';
 
 const useStyles = makeStyles(({ spacing }) => ({
     root: {
@@ -25,6 +26,7 @@ export const ConferenceContainer = ({ conference }: Props) => {
     return (
         <div className={classes.root}>
             <ConfDescription type={type} duration={duration} creator={creator.name} date={date} />
+            <WebcamView />
         </div>
     );
 };
