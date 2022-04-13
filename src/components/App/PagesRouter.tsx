@@ -19,7 +19,7 @@ export const PagesRouter = () => {
                     <Auth />
                 </Route>
                 <Route>
-                    {!user && <Redirect to="/auth" />}
+                    {!Object.keys(user).length && <Redirect to="/auth" />}
                     <AppLayout>
                         <Switch>
                             <Route path="/" exact>

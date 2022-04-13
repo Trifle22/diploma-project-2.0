@@ -17,7 +17,7 @@ export const ConferencePage = () => {
         creator: {
             id: 0,
             name: 'alexander',
-            roles: [UserRole.ROLE_GROUP_ADMIN, UserRole.ROLE_BASE, UserRole.ROLE_MODERATOR],
+            roles: [UserRole.ROLE_TEACHER, UserRole.ROLE_BASE, UserRole.ROLE_MODERATOR],
         },
         participants: [
             { id: 1, name: 'alexander', roles: [UserRole.ROLE_BASE] }

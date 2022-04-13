@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-    Fade, makeStyles, Typography
-} from '@material-ui/core';
-import {
-    Formik, FormikErrors, FormikProps
-} from 'formik';
+import { Fade, makeStyles, Typography } from '@material-ui/core';
+import { Formik, FormikErrors, FormikProps } from 'formik';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AuthForm } from './AuthForm';
@@ -53,10 +49,11 @@ export const Auth = () => {
         const user = {
             id: 0,
             name: values.user,
-            roles: [UserRole.ROLE_BASE],
+            roles: [UserRole.ROLE_BASE, UserRole.ROLE_TEACHER],
         };
-        history.replace('/');
+        console.log(user);
         dispatch(userActions.userLogined(user));
+        history.replace('/');
     };
 
     return (

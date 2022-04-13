@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { GoToConferenceWidget } from './Widgets/GoToConferenceWidget';
 import { CreateConferenceWidget } from './Widgets/CreateConferenceWidget';
+import { useUserRole } from '../../common/hooks/useUserRole';
+import { UserRole } from '../../../types/types';
 
 const useStyles = makeStyles(({ spacing }) => ({
     root: {
@@ -17,10 +19,13 @@ const useStyles = makeStyles(({ spacing }) => ({
 export const HomePage = () => {
     const classes = useStyles();
 
+    const isTeacher = useUserRole(UserRole.ROLE_TEACHER);
+    const isModerator = useUserRole(UserRole.ROLE_MODERATOR);
+
     return (
         <div className={classes.root}>
             <GoToConferenceWidget />
-            <CreateConferenceWidget />
+            {(isModerator || isTeacher) && <CreateConferenceWidget />}
         </div>
     );
 };
