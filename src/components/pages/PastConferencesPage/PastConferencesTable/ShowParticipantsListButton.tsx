@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { IconButton } from '@material-ui/core';
 import { List } from '@material-ui/icons';
-import { Participant } from './types';
 import { ParticipantsListDialog } from './ParticipantsListDialog';
+import { User } from '../../../../types/types';
 
 interface Props {
-    participantsList: Participant[];
+    participantsList: User[];
 }
 
 export const ShowParticipantsListButton = ({ participantsList }: Props) => {

@@ -12,7 +12,7 @@ function* getPastConferencesSaga() {
     const pastConferences: PastConference[] = yield call(pastConferencesApi.getAllConferences);
     console.log(pastConferences);
 
-    yield put(pastConferencesActions.hierarchicalSourcesReceived(pastConferencesMock));
+    yield put(pastConferencesActions.pastConferencesReceived(pastConferencesMock));
 }
 
 const fetchGetPastConferencesSaga = createFetcherSaga(getPastConferencesActionCreator, getPastConferencesSaga);

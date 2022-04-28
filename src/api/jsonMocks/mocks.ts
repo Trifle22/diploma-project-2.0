@@ -1,4 +1,5 @@
 import { PastConference } from '../../components/pages/PastConferencesPage/PastConferencesTable/types';
+import { UserRole } from '../../types/types';
 
 export const pastConferencesMock: PastConference[] = [
     {
@@ -9,31 +10,44 @@ export const pastConferencesMock: PastConference[] = [
         participantsList: [
             {
                 name: 'alex',
-                id: 0
+                id: 0,
+                roles: [UserRole.ROLE_BASE]
             },
             {
                 name: 'nastya',
-                id: 1
+                id: 1,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'denis',
-                id: 2
+                id: 2,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'danya',
-                id: 3
+                id: 3,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'liza',
-                id: 4
+                id: 4,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'valera',
-                id: 5
+                id: 5,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'vanya',
-                id: 6
+                id: 6,
+                roles: [UserRole.ROLE_BASE]
+
             }
         ]
     },
@@ -45,31 +59,45 @@ export const pastConferencesMock: PastConference[] = [
         participantsList: [
             {
                 name: 'alex',
-                id: 0
+                id: 0,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'nastya',
-                id: 1
+                id: 1,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'denis',
-                id: 2
+                id: 2,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'danya',
-                id: 3
+                id: 3,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'liza',
-                id: 4
+                id: 4,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'valera',
-                id: 5
+                id: 5,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'vanya',
-                id: 6
+                id: 6,
+                roles: [UserRole.ROLE_BASE]
+
             }
         ]
     },
@@ -81,31 +109,45 @@ export const pastConferencesMock: PastConference[] = [
         participantsList: [
             {
                 name: 'alex',
-                id: 0
+                id: 0,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'nastya',
-                id: 1
+                id: 1,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'denis',
-                id: 2
+                id: 2,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'danya',
-                id: 3
+                id: 3,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'liza',
-                id: 4
+                id: 4,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'valera',
-                id: 5
+                id: 5,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'vanya',
-                id: 6
+                id: 6,
+                roles: [UserRole.ROLE_BASE]
+
             }
         ]
     },
@@ -117,11 +159,15 @@ export const pastConferencesMock: PastConference[] = [
         participantsList: [
             {
                 name: 'alex',
-                id: 0
+                id: 0,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'denis',
-                id: 2
+                id: 2,
+                roles: [UserRole.ROLE_BASE]
+
             }
         ]
     },
@@ -133,23 +179,33 @@ export const pastConferencesMock: PastConference[] = [
         participantsList: [
             {
                 name: 'denis',
-                id: 2
+                id: 2,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'danya',
-                id: 3
+                id: 3,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'liza',
-                id: 4
+                id: 4,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'valera',
-                id: 5
+                id: 5,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'vanya',
-                id: 6
+                id: 6,
+                roles: [UserRole.ROLE_BASE]
+
             }
         ]
     },
@@ -161,11 +217,15 @@ export const pastConferencesMock: PastConference[] = [
         participantsList: [
             {
                 name: 'alex',
-                id: 0
+                id: 0,
+                roles: [UserRole.ROLE_BASE]
+
             },
             {
                 name: 'nastya',
-                id: 1
+                id: 1,
+                roles: [UserRole.ROLE_BASE]
+
             }
         ]
     }

@@ -5,7 +5,7 @@ export const pastConferencesSlice = createSlice({
     name: 'pastConferences',
     initialState: pastConferencesEntityAdapter.getInitialState(),
     reducers: {
-        hierarchicalSourcesReceived: pastConferencesEntityAdapter.setAll,
-        hierarchicalSourceDeleted: pastConferencesEntityAdapter.removeOne,
+        pastConferencesReceived: pastConferencesEntityAdapter.setAll,
+        pastConferencesDeleted: pastConferencesEntityAdapter.removeOne,
     }
 });

@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { ConferenceContainer } from './ConferenceContainer';
 import { UserRole } from '../../../types/types';
-import { ConferenceType } from './types';
+import { Conference, ConferenceType } from './types';
 
 const useStyles = makeStyles(({ spacing }) => ({
     root: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 }));
 
 export const ConferencePage = () => {
-    const conference = {
+    const conference: Conference = {
         creator: {
             id: 0,
             name: 'alexander',

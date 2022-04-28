@@ -3,10 +3,10 @@ import React from 'react';
 import { ClosableDialogTitle } from '../../../common/ClosableDialogTitle';
 import { VirtualTable } from '../../../common/VirtualTable/VirtualTable';
 import { participantsListColumns } from './participantsListColumns';
-import { Participant } from './types';
+import { User } from '../../../../types/types';
 
 interface Props {
-    participantsList: Participant[];
+    participantsList: User[];
     onClose: () => void;
     isOpen: boolean;
 }
