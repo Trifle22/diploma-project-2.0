@@ -1,9 +1,12 @@
 import { makeStyles } from '@material-ui/core';
-import React, { useState } from 'react';
-import { BaseVideoControlButton, VideoState } from '../ControlButtons';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { BaseVideoControlButton } from '../ControlButtons';
 import { VideoPlug } from './VideoPlug';
 import { VideoView } from './VideoView';
-// import Webcam from 'react-webcam';
+import {
+    selectVideoSetting
+} from '../../../../slices/individualConferenceSettings/individualConferenceSettingsSelectors';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -21,12 +24,10 @@ const useStyles = makeStyles(() => ({
 
 export const WebcamView = () => {
     const classes = useStyles();
-
-    const [videoState, setVideoState] = useState(VideoState.DISABLE);
-
+    const videoState = useSelector(selectVideoSetting);
     let content;
 
-    if (videoState === VideoState.DISABLE) {
+    if (!videoState) {
         content = <VideoPlug />;
     } else {
         content = <VideoView />;
@@ -35,7 +36,7 @@ export const WebcamView = () => {
     return (
         <div className={classes.root}>
             {content}
-            <BaseVideoControlButton videoState={videoState} onClick={setVideoState} />
+            <BaseVideoControlButton videoState={videoState} />
         </div>
     );
 };

@@ -1,26 +1,23 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { DisableVideoButton } from './DisableVideoButton';
 import { EnableVideoButton } from './EnableVideoButton';
-
-export enum VideoState {
-    ENABLE = 'ENABLE',
-    DISABLE = 'DISABLE'
-}
+import { individualConferenceSettingsActions } from '../../../../slices/individualConferenceSettings';
 
 interface Props {
-    onClick: Dispatch<SetStateAction<VideoState>>;
-    videoState: VideoState;
+    videoState: boolean;
 }
 
-export const BaseVideoControlButton = ({ onClick, videoState }: Props) => {
+export const BaseVideoControlButton = ({ videoState }: Props) => {
+    const dispatch = useDispatch();
     const enableVideo = () => {
-        onClick(VideoState.ENABLE);
+        dispatch(individualConferenceSettingsActions.changeVideoMode(true));
     };
     const disableVideo = () => {
-        onClick(VideoState.DISABLE);
+        dispatch(individualConferenceSettingsActions.changeVideoMode(false));
     };
 
-    if (videoState === VideoState.DISABLE) return <EnableVideoButton onClick={enableVideo} />;
+    if (!videoState) return <EnableVideoButton onClick={enableVideo} />;
 
     return <DisableVideoButton onClick={disableVideo} />;
 };

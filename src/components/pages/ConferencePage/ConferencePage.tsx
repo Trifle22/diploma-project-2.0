@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { ConferenceContainer } from './ConferenceContainer';
-import { UserRole } from '../../../types/types';
-import { Conference, ConferenceType } from './types';
+import { selectConference } from '../../../slices/conference';
 
 const useStyles = makeStyles(({ spacing }) => ({
     root: {
@@ -13,19 +13,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 }));
 
 export const ConferencePage = () => {
-    const conference: Conference = {
-        creator: {
-            id: 0,
-            name: 'alexander',
-            roles: [UserRole.ROLE_TEACHER, UserRole.ROLE_BASE, UserRole.ROLE_MODERATOR],
-        },
-        participants: [
-            { id: 1, name: 'alexander', roles: [UserRole.ROLE_BASE] }
-        ],
-        date: 1648976403310,
-        duration: 60000,
-        type: ConferenceType.WITH_VIDEO
-    };
+    const conference = useSelector(selectConference);
 
     const classes = useStyles();
 
