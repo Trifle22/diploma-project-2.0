@@ -73,6 +73,7 @@ rules:
   jsx-a11y/accessible-emoji: "off"
   redux-saga/no-unhandled-errors: "off"
   no-unused-vars: "off"
+  semi: "off"
   react/prop-types: "off"
   react/no-unused-prop-type: "off"
   react/require-default-props: "off"

@@ -2,11 +2,12 @@ import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Conference } from './types';
 import { ConfDescription } from './ConfDescription';
-import { WebcamView } from './Webcam';
+import { ConferenceTabs } from './ConferenceTabs/ConferenceTabs';
 
 const useStyles = makeStyles(({ spacing }) => ({
     root: {
         display: 'flex',
+        flex: 1,
         flexDirection: 'column',
         gap: spacing(2)
     }
@@ -26,7 +27,7 @@ export const ConferenceContainer = ({ conference }: Props) => {
     return (
         <div className={classes.root}>
             <ConfDescription type={type} duration={duration} creator={creator.name} date={date} />
-            <WebcamView />
+            <ConferenceTabs conference={conference} />
         </div>
     );
 };
