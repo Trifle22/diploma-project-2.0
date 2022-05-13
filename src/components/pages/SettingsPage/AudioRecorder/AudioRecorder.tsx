@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { ReactMic, ReactMicStopEvent } from 'react-mic';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import { WidgetPaper } from '../../HomePage/Widgets/WidgetPaper';
 import { ControlButtons } from './ControlButtons';
 
@@ -9,7 +9,8 @@ const useStyles = makeStyles(({ spacing }) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: spacing(1)
+        gap: spacing(1),
+        minWidth: '650px'
     }
 }))
 
@@ -23,20 +24,21 @@ export const AudioRecorder = () => {
         setUrl(recordedBlob.blobURL);
     }
     return (
-        <WidgetPaper>
-            <div className={classes.root}>
-                <ReactMic
-                    record={isRecord}
-                    onStop={onStop}
-                    visualSetting="frequencyBars"
-                    strokeColor="#3f50b5"
-                    backgroundColor="white"
-                />
-                <ControlButtons setIsRecord={setIsRecord} />
-                <audio controls controlsList="nodownload" src={url} ref={ref}>
-                    <track kind="captions" />
-                </audio>
-            </div>
+        <WidgetPaper className={classes.root}>
+            <ReactMic
+                record={isRecord}
+                onStop={onStop}
+                visualSetting="frequencyBars"
+                strokeColor="#3f50b5"
+                backgroundColor="white"
+            />
+            <ControlButtons setIsRecord={setIsRecord} />
+            <audio controls controlsList="nodownload" src={url} ref={ref}>
+                <track kind="captions" />
+            </audio>
+            <Typography variant="subtitle2">
+                Нажмите Старт для проверки микрофона
+            </Typography>
         </WidgetPaper>
     )
 }

@@ -22,7 +22,7 @@ export const PagesRouter = () => {
                     {!Object.keys(user).length && <Redirect to="/auth" />}
                     <AppLayout>
                         <Switch>
-                            <Route path="/" exact>
+                            <Route path="/home" exact>
                                 <HomePage />
                             </Route>
                             <Route path="/conference" exact>

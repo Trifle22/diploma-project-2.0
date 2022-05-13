@@ -25,10 +25,10 @@ export const ControlButtons = ({ setIsRecord }: Props) => {
     return (
         <div className={classes.root}>
             <Button onClick={startRecord} color="primary">
-                start
+                Старт
             </Button>
             <Button onClick={stopRecord} color="primary">
-                stop
+                Стоп
             </Button>
         </div>
 

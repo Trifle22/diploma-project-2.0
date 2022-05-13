@@ -6,8 +6,9 @@ import {
 const useStyles = makeStyles<Theme>(({ spacing }) => ({
     root: {
         flexBasis: '25%',
-        height: '25%',
-        padding: spacing(1, 2)
+        height: '30%',
+        padding: spacing(1, 2),
+        alignSelf: 'baseline'
     }
 }));
 

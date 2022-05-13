@@ -50,7 +50,7 @@ export const AppNavBar = () => {
                 <ArrowUpward />
             </IconButton>
             <NavLink
-                to="/"
+                to="/home"
                 exact
                 className={classes.iconButton}
                 activeClassName="selected"

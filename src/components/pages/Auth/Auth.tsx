@@ -53,7 +53,7 @@ export const Auth = () => {
         };
         console.log(user);
         dispatch(userActions.userLogined(user));
-        history.replace('/');
+        history.replace('/home');
     };
 
     return (

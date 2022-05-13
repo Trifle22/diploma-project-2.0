@@ -20,7 +20,6 @@ const useStyles = makeStyles(({ spacing }) => ({
     container: {
         maxHeight: '600px',
         maxWidth: '800px',
-
     },
     controlButtons: {
         display: 'flex',
