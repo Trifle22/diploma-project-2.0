@@ -1,16 +1,17 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Paper, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
-import { WidgetPaper } from '../../HomePage/Widgets/WidgetPaper';
 import { WebcamView } from './WebcamView';
 import { VideoControlButton } from './VideoControlButton';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(({ spacing }) => ({
     root: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         flexGrow: 1,
-        minWidth: '650px'
+        width: '700px',
+        maxHeight: '500px',
+        paddingTop: spacing(2)
     }
 }))
 
@@ -19,12 +20,12 @@ export const VideoRecorder = () => {
     const [videoState, setVideoState] = useState(false);
 
     return (
-        <WidgetPaper className={classes.root}>
+        <Paper className={classes.root} elevation={3}>
             <WebcamView videoState={videoState} />
             <VideoControlButton videoState={videoState} setVideoState={setVideoState} />
             <Typography variant="subtitle2">
                 Включите камеру, чтобы проверить качество видео
             </Typography>
-        </WidgetPaper>
+        </Paper>
     )
 }

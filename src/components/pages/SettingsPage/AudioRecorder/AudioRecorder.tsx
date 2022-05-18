@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { ReactMic, ReactMicStopEvent } from 'react-mic';
-import { makeStyles, Typography } from '@material-ui/core';
-import { WidgetPaper } from '../../HomePage/Widgets/WidgetPaper';
+import { makeStyles, Paper, Typography } from '@material-ui/core';
 import { ControlButtons } from './ControlButtons';
 
 const useStyles = makeStyles(({ spacing }) => ({
@@ -10,7 +9,8 @@ const useStyles = makeStyles(({ spacing }) => ({
         flexDirection: 'column',
         alignItems: 'center',
         gap: spacing(1),
-        minWidth: '650px'
+        minWidth: '700px',
+        paddingBottom: spacing(2)
     }
 }))
 
@@ -24,7 +24,7 @@ export const AudioRecorder = () => {
         setUrl(recordedBlob.blobURL);
     }
     return (
-        <WidgetPaper className={classes.root}>
+        <Paper className={classes.root} elevation={3}>
             <ReactMic
                 record={isRecord}
                 onStop={onStop}
@@ -39,6 +39,6 @@ export const AudioRecorder = () => {
             <Typography variant="subtitle2">
                 Нажмите Старт для проверки микрофона
             </Typography>
-        </WidgetPaper>
+        </Paper>
     )
 }
