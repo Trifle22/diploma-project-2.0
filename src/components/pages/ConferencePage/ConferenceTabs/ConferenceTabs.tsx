@@ -7,11 +7,12 @@ import VideocamIcon from '@material-ui/icons/Videocam';
 import GestureIcon from '@material-ui/icons/Gesture';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { TabPanel } from './TabPanel';
-import { WebcamView } from '../Webcam/WebcamView';
+import { WebcamView } from '../Webcam';
 import { ParticipantsList } from '../Webcam/ParticipantsList/ParticipantsList';
 import { Conference } from '../types';
 import { DrawingBoard } from '../DrawingBoard/DrawingBoard';
 import { Documents } from '../Documents';
+import { Chat } from '../Webcam/Chat';
 
 const useStyles = makeStyles(({ spacing }) => ({
     root: {
@@ -68,6 +69,7 @@ export const ConferenceTabs = ({ conference }: Props) => {
                     <div className={classes.viewContainer}>
                         <WebcamView />
                         <ParticipantsList participants={conference.participants} />
+                        <Chat />
                     </div>
                 </TabPanel>
                 <TabPanel index={1} value={value} dir={theme.direction}>

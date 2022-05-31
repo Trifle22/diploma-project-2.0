@@ -51,7 +51,6 @@ export const Auth = () => {
             name: values.user,
             roles: [UserRole.ROLE_BASE, UserRole.ROLE_TEACHER],
         };
-        console.log(user);
         dispatch(userActions.userLogined(user));
         history.replace('/home');
     };
@@ -84,7 +83,6 @@ export const Auth = () => {
                     return errors;
                 }}
                 onSubmit={onSubmit}
-
             >
                 {({ isValid, isValidating }: FormikProps<AuthFormValues>) => {
                     const isSubmitDisabled = !isValid || isValidating;
